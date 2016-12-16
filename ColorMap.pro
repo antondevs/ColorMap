@@ -24,8 +24,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    mapview.cpp \
+    colormap.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    mapview.h \
+    colormap.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    resource.qrc

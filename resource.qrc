@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/new/rsc">
+        <file>images/export.png</file>
+        <file>images/open.png</file>
+        <file>images/save.png</file>
+        <file>images/create.png</file>
+        <file>images/hue.png</file>
+    </qresource>
+</RCC>
