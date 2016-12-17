@@ -67,26 +67,18 @@ void MainWindow::on_actionOpenMap_triggered()
 
     while(!xmlReader.atEnd())
     {
-        if(xmlReader.isStartElement())
+        if(xmlReader.name() == "hue")
         {
-            if(xmlReader.name() == "colormap")
-            {
-               xmlReader.readNext();
-            }
-            else if(xmlReader.name() == "hue")
-            {
-                QString value = xmlReader.readElementText();
-                m_pColorMap->GetSlot(nIndex)->fHueAngle = value.toFloat();
-                nIndex++;
+            QString value = xmlReader.readElementText();
 
-                if (nIndex >= COLOR_COUNT)
-                    break;
-            }
+            m_pColorMap->UpdateSlot(nIndex, value.toFloat());
+            nIndex++;
+
+            if (nIndex >= COLOR_COUNT)
+                break;
         }
-        else
-        {
-            xmlReader.readNext();
-        }
+
+        xmlReader.readNext();
     }
 
     file.close();
