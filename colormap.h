@@ -27,13 +27,15 @@ struct ColorSlot
 class ColorMap
 {
 private:
-    ColorSlot m_aSlots[COLOR_COUNT];
+    // Plus 1 - for black&gray&white
+    ColorSlot m_aSlots[COLOR_COUNT + 1];
     void UpdateColor(Color &cColor, float fHueAngle, float fSaturation, float fBrightness);
 
 public:
     ColorMap();
     ~ColorMap();
 
+    void Reset();
     void UpdateSlot(int nIndex, float fHueAngle);
     ColorSlot *GetSlot(int nIndex);
 };

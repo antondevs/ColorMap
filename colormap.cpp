@@ -3,6 +3,11 @@
 
 ColorMap::ColorMap()
 {
+    Reset();
+}
+
+void ColorMap::Reset()
+{
     float fSlotRange = (int) (360.0 / COLOR_COUNT);
 
     // Init default color table
@@ -10,6 +15,24 @@ ColorMap::ColorMap()
     {
         UpdateSlot(i, fSlotRange * i );
     }
+
+    // For black and white
+
+    UpdateColor(m_aSlots[COLOR_COUNT].aTable[0], 160, 0.0f, 0.0f);       // Row1
+    UpdateColor(m_aSlots[COLOR_COUNT].aTable[1], 160, 0.0f, 0.25f);      // Row2
+    UpdateColor(m_aSlots[COLOR_COUNT].aTable[2], 160, 0.0f, 0.20f);      // Row2
+    UpdateColor(m_aSlots[COLOR_COUNT].aTable[3], 160, 0.0f, 0.50f);      // Row3
+    UpdateColor(m_aSlots[COLOR_COUNT].aTable[4], 160, 0.0f, 0.45f);       // Row3
+    UpdateColor(m_aSlots[COLOR_COUNT].aTable[5], 160, 0.0f, 0.40f);       // Row3
+    UpdateColor(m_aSlots[COLOR_COUNT].aTable[6], 160, 0.0f, 0.75f);       // Row4
+    UpdateColor(m_aSlots[COLOR_COUNT].aTable[7], 160, 0.0f, 0.70f);       // Row4
+    UpdateColor(m_aSlots[COLOR_COUNT].aTable[8], 160, 0.0f, 0.65f);       // Row4
+    UpdateColor(m_aSlots[COLOR_COUNT].aTable[9], 160, 0.0f, 0.60f);       // Row4
+    UpdateColor(m_aSlots[COLOR_COUNT].aTable[10], 160, 0.0f, 1.0f);      // Row5
+    UpdateColor(m_aSlots[COLOR_COUNT].aTable[11], 160, 0.0f, 0.95f);      // Row5
+    UpdateColor(m_aSlots[COLOR_COUNT].aTable[12], 160, 0.0f, 0.90f);      // Row5
+    UpdateColor(m_aSlots[COLOR_COUNT].aTable[13], 160, 0.0f, 0.85f);      // Row5
+    UpdateColor(m_aSlots[COLOR_COUNT].aTable[14], 160, 0.0f, 0.80f);      // Row5
 }
 
 ColorMap::~ColorMap()
@@ -19,7 +42,7 @@ ColorMap::~ColorMap()
 
 ColorSlot *ColorMap::GetSlot(int nIndex)
 {
-    if (nIndex >= 0 && nIndex < COLOR_COUNT)
+    if (nIndex >= 0 && nIndex <= COLOR_COUNT)
     {
         return &m_aSlots[nIndex];
     }
