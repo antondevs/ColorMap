@@ -136,7 +136,7 @@ void ColorMap::UpdateSlot(int nIndex, float fHueAngle)
 
         UpdateColor(m_aSlots[nIndex].aTable[0], fHueAngle, 0.6f, 0.2f);       // Row1
 
-        UpdateColor(m_aSlots[nIndex].aTable[1], fHueAngle, 0.8f, 0.4f);       // Row2
+        UpdateColor(m_aSlots[nIndex].aTable[1], fHueAngle, 0.4f, 0.4f);       // Row2
         UpdateColor(m_aSlots[nIndex].aTable[2], fHueAngle, 0.6f, 0.4f);       // Row2
 
         UpdateColor(m_aSlots[nIndex].aTable[3], fHueAngle, 0.4f, 0.6f);       // Row3
